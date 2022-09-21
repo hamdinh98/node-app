@@ -1,11 +1,11 @@
 version: '3'
 services:
-  # my-app:
-    # image: ${docker-registry}/my-app:1.0
-    # ports:
-     # - 3000:3000
+   my-app:
+     image: nodeapp1.azurecr.io/my-app:1.0
+      ports:
+      - 3000:3000
   mongodb:
-    image: mongo
+    image: nodeapp1.azurecr.io/mongo.latest
     ports:
      - 27017:27017
     environment:
@@ -14,7 +14,7 @@ services:
     volumes:
      - mongo-data:/data/db
   mongo-express:
-    image: mongo-express
+    image: nodeapp1.azurecr.io/mongo-express:latest
     restart: always
     ports:
      - 8080:8081
